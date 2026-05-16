@@ -6,8 +6,12 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
-            <Link to="/" className="font-display text-2xl font-semibold text-ink">
-              innovsol<span className="text-brand-orange">.ai</span>
+            <Link to="/">
+              <img
+                src="/Photos_and_Video/innovsol-logo-design.png"
+                alt="Innovsol"
+                className="h-52 w-auto object-contain"
+              />
             </Link>
             <p className="mt-3 max-w-sm text-sm text-ink/50">
               Intelligence-led Enterprise Transformation

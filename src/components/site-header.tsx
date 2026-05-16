@@ -34,9 +34,12 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <Link to="/" className="group flex items-center gap-2 font-display text-lg font-semibold">
-          <span className="relative inline-block h-2 w-2 rounded-full bg-brand-orange transition-transform group-hover:scale-150" />
-          innovsol<span className="text-brand-blue">.ai</span>
+        <Link to="/" className="group flex items-center">
+          <img
+            src="/Photos_and_Video/innovsol-logo-design.png"
+            alt="Innovsol"
+            className="h-44 w-auto object-contain"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
