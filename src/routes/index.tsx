@@ -352,110 +352,6 @@ function AnalyticsDemoVideo() {
   );
 }
 
-function DepthManifesto() {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const imgY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
-  const txtY = useTransform(scrollYProgress, [0, 1], ["0px", "-80px"]);
-
-  return (
-    <section ref={ref} className="relative h-[100svh] overflow-hidden bg-ink select-none">
-
-      {/* ── L0: Giant architectural text behind the photo ── */}
-      <motion.div
-        style={{ y: txtY }}
-        aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 flex flex-col items-center justify-center text-center"
-      >
-        <span
-          className="font-display font-black uppercase text-paper"
-          style={{
-            fontSize: "clamp(3.6rem, 13vw, 13rem)",
-            lineHeight: 0.84,
-            opacity: 0.09,
-            letterSpacing: "-0.025em",
-          }}
-        >
-          Automate.<br />
-          Secure.<br />
-          Transform.
-        </span>
-      </motion.div>
-
-      {/* ── L10: Robert photo — gradient mask creates the "breakthrough" ── */}
-      <motion.div style={{ y: imgY }} className="absolute inset-0 z-10">
-        <img
-          src="/Photos_and_Video/robert.jpg"
-          alt="Enterprise transformation leader"
-          className="h-full w-full object-cover object-top"
-          style={{
-            WebkitMaskImage:
-              "linear-gradient(to bottom, transparent 0%, transparent 10%, black 40%, black 100%)",
-            maskImage:
-              "linear-gradient(to bottom, transparent 0%, transparent 10%, black 40%, black 100%)",
-          }}
-        />
-        {/* Subtle orange bloom at the breakthrough midpoint */}
-        <div
-          className="pointer-events-none absolute"
-          style={{
-            top: "38%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "50vw",
-            height: "22vh",
-            background: "var(--brand-orange)",
-            opacity: 0.055,
-            filter: "blur(90px)",
-            borderRadius: "50%",
-          }}
-        />
-      </motion.div>
-
-      {/* ── L20: Edge fades — blend image into bg ── */}
-      <div className="pointer-events-none absolute inset-0 z-20">
-        <div className="absolute inset-y-0 left-0 w-[20%] bg-gradient-to-r from-ink to-transparent" />
-        <div className="absolute inset-y-0 right-0 w-[20%] bg-gradient-to-l from-ink to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-ink to-transparent" />
-      </div>
-
-      {/* ── L30: UI content ── */}
-      <div className="absolute inset-0 z-30 flex flex-col justify-between pointer-events-none px-8 py-14 md:px-16 md:py-20">
-        <motion.div
-          initial={{ opacity: 0, y: -12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-brand-orange"
-        >
-          <span className="h-px w-8 bg-brand-orange" />
-          Our People · Our Promise
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.15, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-sm"
-        >
-          <p className="text-2xl font-semibold leading-snug text-paper md:text-3xl">
-            Certified experts.<br />
-            <span className="text-brand-orange">Committed to your outcomes.</span>
-          </p>
-          <p className="mt-4 text-sm leading-relaxed text-paper/45">
-            10+ years of enterprise delivery across India, UAE and Africa — backed by OEM partnerships with Cisco, UiPath, Fortinet and more.
-          </p>
-          <Link
-            to="/about"
-            className="pointer-events-auto mt-7 inline-flex items-center gap-2 text-sm font-semibold text-paper transition-colors hover:text-brand-orange"
-          >
-            Meet our team <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
 
 function Index() {
   const heroRef = useRef<HTMLElement>(null);
@@ -568,8 +464,6 @@ function Index() {
       <MarqueePartners />
 
       <VideoBanner />
-
-      <DepthManifesto />
 
       {/* CAPABILITIES */}
       <section className="relative px-6 py-24 md:py-32">

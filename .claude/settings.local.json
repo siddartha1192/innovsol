@@ -6,7 +6,10 @@
       "Bash(Sort-Object FullName)",
       "Bash(ConvertTo-Json -Depth 10)",
       "Bash(Out-String -Width 300)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(npx plugins *)",
+      "Bash(where claude *)",
+      "Bash(npm list *)"
     ]
   }
 }
