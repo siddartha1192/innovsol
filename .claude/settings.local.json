@@ -9,7 +9,11 @@
       "Bash(npx tsc *)",
       "Bash(npx plugins *)",
       "Bash(where claude *)",
-      "Bash(npm list *)"
+      "Bash(npm list *)",
+      "Bash(npm run *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
